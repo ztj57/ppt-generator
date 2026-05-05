@@ -15,7 +15,7 @@ export default function Home() {
   const [status, setStatus] = useState<Status | null>(null)
 
   useEffect(() => {
-    fetch('https://ppt-generator-production-5a25.up.railway.app/api/status')
+    fetch('/api/status')
       .then(res => res.json())
       .then(data => setStatus(data))
       .catch(() => setStatus({ ai_available: false, message: "服务未就绪" }))
@@ -50,7 +50,7 @@ export default function Home() {
       formData.append('file', file)
       formData.append('use_ai', 'true')
 
-      const response = await fetch('https://ppt-generator-production-5a25.up.railway.app/api/generate-ppt', {
+      const response = await fetch('/api/generate-ppt',{
         method: 'POST',
         body: formData,
       })
