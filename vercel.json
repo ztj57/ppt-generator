@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://ppt-generator-production-5a25.up.railway.app/api/:path*"
+    }
+  ]
+}
